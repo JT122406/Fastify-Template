@@ -33,11 +33,11 @@ const start: () => Promise<void> = async (): Promise<void> => {
     const app: FastifyInstance = await buildServer();
 
     try {
-        await app.listen({ port: 3000 })
-        app.log.info(`Server running at http://localhost:3000`)
-        app.log.info(`Swagger UI available at http://localhost:3000/docs`)
+        await app.listen({
+            host: '0.0.0.0',
+            port: 3000
+        })
     } catch (err) {
-        app.log.error(err)
         process.exit(1)
     }
 }
