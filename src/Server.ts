@@ -2,6 +2,7 @@ import type {FastifyInstance} from "fastify";
 import Fastify from "fastify";
 import cors from '@fastify/cors';
 import swaggerUI from '@fastify/swagger-ui';
+import Swagger from "./swagger/Swagger.ts";
 
 
 /** Fastify server instance **/
@@ -21,6 +22,8 @@ async function buildServer(): Promise<FastifyInstance> {
             deepLinking: false
         }
     });
+
+    await Swagger(fastify);
 
     return fastify;
 }
