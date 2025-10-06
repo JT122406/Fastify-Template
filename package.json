@@ -16,11 +16,11 @@
   "module": "ESNext",
   "devDependencies": {
     "@types/node": "^24.5.2",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "@fastify/cors": "^11.1.0",
-    "@fastify/swagger": "^9.5.1",
+    "@fastify/swagger": "^9.5.2",
     "@fastify/swagger-ui": "^5.2.3",
     "fastify": "^5.6.1"
   }
