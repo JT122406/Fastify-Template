@@ -1,7 +1,6 @@
 import type {FastifyInstance} from "fastify";
 import Fastify from "fastify";
 import cors from '@fastify/cors';
-import swaggerUI from '@fastify/swagger-ui';
 import Swagger from "./swagger/Swagger.ts";
 
 
@@ -14,14 +13,6 @@ const fastify: FastifyInstance = Fastify({ logger: true })
  */
 async function buildServer(): Promise<FastifyInstance> {
     await fastify.register(cors, { origin: '*' });
-
-    await fastify.register(swaggerUI, {
-        routePrefix: '/docs',
-        uiConfig: {
-            docExpansion: 'list',
-            deepLinking: false
-        }
-    });
 
     await Swagger(fastify);
 

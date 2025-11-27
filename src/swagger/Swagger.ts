@@ -20,7 +20,11 @@ const Swagger: (fastify: FastifyInstance) => Promise<void> = async (fastify: Fas
     });
 
     await fastify.register(swaggerUI, {
-       routePrefix: '/docs'
+       routePrefix: '/docs',
+        uiConfig: {
+            docExpansion: 'list',
+            deepLinking: false
+        }
     });
 };
 
